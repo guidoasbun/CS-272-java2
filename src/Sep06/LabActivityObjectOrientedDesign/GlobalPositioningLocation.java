@@ -1,6 +1,6 @@
 // PROGRAMMER: Guido Asbun
 
-package LabActivityObjectOrientedDesign;
+package Sep06.LabActivityObjectOrientedDesign;
 
 public class GlobalPositioningLocation {
     // INSTANCE VARIABLES
@@ -27,7 +27,6 @@ public class GlobalPositioningLocation {
     }
 
     // INSTANCE METHODS
-
     public void setLatitude(double latitude) {
         this.latitude = latitude;
     }

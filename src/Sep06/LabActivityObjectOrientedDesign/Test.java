@@ -1,4 +1,4 @@
-package LabActivityObjectOrientedDesign;
+package Sep06.LabActivityObjectOrientedDesign;
 
 
 public class Test {
