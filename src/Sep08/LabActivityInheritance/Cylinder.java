@@ -43,11 +43,13 @@ public class Cylinder extends GeometricSolid{
         return height;
     }
 
+    @Override
     public void setDescription(String description)
     {
         super.setDescription(description);
     }
 
+    @Override
     public String getDescription()
     {
         return super.getDescription() + " - Cylinder";
