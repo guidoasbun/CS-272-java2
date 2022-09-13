@@ -10,7 +10,7 @@ public class Cylinder extends GeometricSolid{
     public Cylinder()
     {
         radius = 1;
-        height = 1;
+        height = 2;
         super.setUnits("nanometers");
         super.setMaterial("Polyethylene");
     }
