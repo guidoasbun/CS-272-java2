@@ -1,0 +1,7 @@
+Trip Information
+Ferarri F8 Spider
+Trip Distance:   125.1000 kilometers
+Trip Time:         1.5300 hours
+Average Speed:        81.7647 kilometers per hours
+Driver Name:          John Doe 
+Programmer:Guido Asbun 
