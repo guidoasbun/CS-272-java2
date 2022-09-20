@@ -6,23 +6,13 @@ import java.util.Scanner;
 import java.io.IOException;
 import java.io.File;
 import java.io.PrintWriter;
-
 import java.io.IOException;
 
 public class RoadTrip
 {
-    public static void main(String[] args) throws IOException {
-        // CONSTANT DECLARATION AND INITIALIZATION
-        final String INPUT_FILE1 = "src/Sep15/LabActivityInputAndOutput/Input1.txt";
-        final String INPUT_FILE2 = "src/Sep15/LabActivityInputAndOutput/Input2.txt";
-        final String OUTPUT_FILE1 = "src/Sep15/LabActivityInputAndOutput/Output1.txt";
-        final String OUTPUT_FILE2 = "src/Sep15/LabActivityInputAndOutput/Output2.txt";
-        final String PROGRAMMER = "Guido Asbun";
+    // STATIC FIELDS
 
-        averageSpeed(INPUT_FILE1, OUTPUT_FILE1, PROGRAMMER);
-        averageSpeed(INPUT_FILE2, OUTPUT_FILE2, PROGRAMMER);
-    }
-
+    // STATIC METHODS
     public static void averageSpeed(String inputFile, String outputFile, String programmer) throws IOException
     {
         // Variable Declaration
@@ -60,8 +50,22 @@ public class RoadTrip
         fileWriter.printf("Average Speed:%15.4f", averageSpeed);
         fileWriter.println(" " + distanceUnit + " per " + timeUnit);
         fileWriter.printf("Driver Name:%18s %n", driverName);
-        fileWriter.printf("Programmer: %s %n", programmer);
+        fileWriter.println("Programmer: " + programmer);
         fileWriter.close();
     }
+
+    public static void main(String[] args) throws IOException {
+        // CONSTANT DECLARATION AND INITIALIZATION
+        final String INPUT_FILE1 = "src/Sep15/LabActivityInputAndOutput/Input1.txt";
+        final String INPUT_FILE2 = "src/Sep15/LabActivityInputAndOutput/Input2.txt";
+        final String OUTPUT_FILE1 = "src/Sep15/LabActivityInputAndOutput/Output1.txt";
+        final String OUTPUT_FILE2 = "src/Sep15/LabActivityInputAndOutput/Output2.txt";
+        final String PROGRAMMER = "Guido Asbun";
+
+        averageSpeed(INPUT_FILE1, OUTPUT_FILE1, PROGRAMMER);
+        averageSpeed(INPUT_FILE2, OUTPUT_FILE2, PROGRAMMER);
+    }
+
+
 }
 
