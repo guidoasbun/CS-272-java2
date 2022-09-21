@@ -3,6 +3,7 @@ package Sep20.LabActivityExceptionHandling;
 // Programmer Guido Asbun
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -27,17 +28,16 @@ public class Sphere
 
     public void setRadius(double radius)
     {
+        if(radius < 0)
         {
-            if(radius < 0)
-            {
-                throw new IllegalArgumentException("Radius is negative");
-            }
-            if(radius == 0)
-            {
-                throw new IllegalArgumentException("Radius is zero");
-            }
-            this.radius = radius;
+            throw new IllegalArgumentException("Radius is negative");
+
         }
+        if(radius == 0)
+        {
+            throw new IllegalArgumentException("Radius is zero");
+        }
+        this.radius = radius;
     }
 
     public void setUnits(String units)
@@ -62,6 +62,7 @@ public class Sphere
         catch (IllegalArgumentException exception)
         {
             System.out.println(exception.toString());
+            System.exit(0);
         }
 
         System.out.println("Sphere Radius Updated");
@@ -76,6 +77,7 @@ public class Sphere
         catch (IllegalArgumentException exception)
         {
             System.out.println(exception.toString());
+            System.exit(0);
         }
 
         System.out.println("Sphere Units Updated");
@@ -97,20 +99,23 @@ public class Sphere
         input.close();
     }
 
-    public void saveFile(String fileName, double radius, String units) throws IOException
+    public static void saveFile(String fileName, double radius, String units) throws IOException
     {
-
         if(!fileName.endsWith(".txt"))
         {
             throw new IllegalArgumentException("Invalid file type");
         }
-        if(fileName.equals(""))
+
+        if(Objects.equals(fileName, ""))
         {
             throw new IllegalArgumentException("Invalid file name");
         }
 
-
-
+        PrintWriter fileWriter = new PrintWriter(fileName);
+        fileWriter.println("Sphere");
+        fileWriter.println(radius);
+        fileWriter.println(units);
+        fileWriter.close();
     }
 
 
