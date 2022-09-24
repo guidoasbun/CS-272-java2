@@ -31,13 +31,15 @@ public class Sphere
         if(radius < 0)
         {
             throw new IllegalArgumentException("Radius is negative");
-
         }
-        if(radius == 0)
+        else if(radius == 0)
         {
             throw new IllegalArgumentException("Radius is zero");
         }
-        this.radius = radius;
+        else
+        {
+            this.radius = radius;
+        }
     }
 
     public void setUnits(String units)
@@ -46,7 +48,11 @@ public class Sphere
         {
             throw new IllegalArgumentException("Invalid units");
         }
-        this.units = units;
+        else
+        {
+            this.units = units;
+        }
+
     }
 
     public void userInput()
@@ -54,6 +60,7 @@ public class Sphere
         Scanner input = new Scanner(System.in);
         System.out.print("Enter the radius: ");
         double inputRadius = (input.nextDouble());
+        input.nextLine();
 
         try
         {
@@ -62,13 +69,11 @@ public class Sphere
         catch (IllegalArgumentException exception)
         {
             System.out.println(exception.toString());
-            System.exit(0);
         }
 
         System.out.println("Sphere Radius Updated");
-
         System.out.print("Enter the units: ");
-        String inputUnits = (input.next());
+        String inputUnits = (input.nextLine());
 
         try
         {
@@ -77,13 +82,11 @@ public class Sphere
         catch (IllegalArgumentException exception)
         {
             System.out.println(exception.toString());
-            System.exit(0);
         }
 
         System.out.println("Sphere Units Updated");
-
         System.out.print("Enter output filename: ");
-        String outputFileName = (input.next());
+        String outputFileName = (input.nextLine());
 
         try
         {
@@ -95,7 +98,6 @@ public class Sphere
         }
 
         System.out.println("Sphere Data Saved");
-
         input.close();
     }
 
@@ -117,6 +119,4 @@ public class Sphere
         fileWriter.println(units);
         fileWriter.close();
     }
-
-
 }
