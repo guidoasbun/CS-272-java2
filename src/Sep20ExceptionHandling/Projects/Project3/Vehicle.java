@@ -27,12 +27,12 @@ public class Vehicle
           if the conditions of the problem statement are not met.
        */
 
-        if(aType.equals("truck") && !(numWheels <= 4))
+        if(aType.equals("truck") && numWheels < 4)
         {
             throw new IllegalArgumentException();
         }
 
-        if(aType.equals("motorcycle") || numWheels != 2)
+        if(aType.equals("motorcycle") && numWheels != 2)
         {
             throw new IllegalArgumentException();
         }
