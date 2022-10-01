@@ -1,4 +1,4 @@
-package Sep20ExceptionHandling.Project1;
+package Sep20ExceptionHandling.Projects.Project1;
 
 public class BankAccountTester
 {

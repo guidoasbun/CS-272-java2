@@ -1,4 +1,4 @@
-package Sep20ExceptionHandling.Project1;
+package Sep20ExceptionHandling.Projects.Project1;
 
 public class BankAccount
 {
@@ -21,6 +21,11 @@ public class BankAccount
      */
     public BankAccount(double initialBalance, double rate)
     {
+        if(initialBalance <0 || rate <0)
+        {
+            throw new IllegalArgumentException();
+        }
+
         balance = initialBalance;
         interestRate = rate;
     }
