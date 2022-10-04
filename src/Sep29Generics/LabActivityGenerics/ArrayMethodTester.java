@@ -25,6 +25,7 @@ public class ArrayMethodTester
         {
             System.out.print("Enter the cost of building " + (count + 1) + ": ");
             buildingCosts[count] = buildingCostInput.nextDouble();
+            buildingCostInput.nextLine();
             count++;
         }
         buildingCostInput.close();
