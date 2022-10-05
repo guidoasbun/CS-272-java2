@@ -1,19 +1,26 @@
 package Oct4Lists.LabActivityLists;
 
-import java.util.*;
+// Programmer: Guido Asbun
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.NoSuchElementException;
 
 public class Registration
 {
+    // Instance variables
     private String student;
     private String semester;
     LinkedList<String> courseList = new LinkedList<String>();
 
+    // Constructor
     public Registration(String student, String semester)
     {
         this.student = student;
         this.semester = semester;
     }
 
+    // Instance Methods
     public void display()
     {
         System.out.println("Student: " + student);
@@ -29,15 +36,15 @@ public class Registration
 
     public void addCourse(String course)
     {
-        ArrayList<String> courseListNotAllowed = new ArrayList<String>();
-        courseListNotAllowed.add("CS131");
-        courseListNotAllowed.add("CS150");
-        courseListNotAllowed.add("CS170");
-        courseListNotAllowed.add("CS216");
-        courseListNotAllowed.add("CS257");
-        courseListNotAllowed.add("CS272");
+        ArrayList<String> courseListAllowed = new ArrayList<String>();
+        courseListAllowed.add("CS131");
+        courseListAllowed.add("CS150");
+        courseListAllowed.add("CS170");
+        courseListAllowed.add("CS216");
+        courseListAllowed.add("CS257");
+        courseListAllowed.add("CS272");
 
-        if(courseListNotAllowed.contains(course))
+        if(!courseListAllowed.contains(course))
         {
             throw new IllegalArgumentException();
         }
@@ -68,5 +75,4 @@ public class Registration
         }
         return courseList.contains(course);
     }
-
 }
