@@ -11,13 +11,14 @@ public class Registration
     // Instance variables
     private String student;
     private String semester;
-    LinkedList<String> courseList = new LinkedList<String>();
+    LinkedList<String> courseList;
 
     // Constructor
     public Registration(String student, String semester)
     {
         this.student = student;
         this.semester = semester;
+        courseList = new LinkedList<String>();
     }
 
     // Instance Methods
@@ -46,25 +47,30 @@ public class Registration
 
         if(!courseListAllowed.contains(course))
         {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Invalid course");
         }
-        if (courseList.contains(course))
+        else if (courseList.contains(course))
         {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Already registered for this course");
         }
-
-        courseList.addLast(course);
-        display();
+        else
+        {
+            courseList.addLast(course);
+            display();
+        }
     }
 
     public void undo()
     {
         if (courseList.size() == 0)
         {
-            throw new NoSuchElementException("Unable to search an empty list");
+            throw new NoSuchElementException("Unable to remove course from an empty list");
         }
-        courseList.removeLast();
-        display();
+        else
+        {
+            courseList.removeLast();
+            display();
+        }
     }
 
     public boolean search(String course)
@@ -73,6 +79,9 @@ public class Registration
         {
             throw new NoSuchElementException("Unable to search an empty list");
         }
-        return courseList.contains(course);
+        else
+        {
+            return courseList.contains(course);
+        }
     }
 }
