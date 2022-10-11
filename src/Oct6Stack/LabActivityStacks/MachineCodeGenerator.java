@@ -36,6 +36,7 @@ public class MachineCodeGenerator
     // Instance Methods
     public void addCommand(String command)
     {
+        // Could also use linked list .contains() method
         ArrayList<String> commandList = new ArrayList<>();
         commandList.add("G00");
         commandList.add("G02");
