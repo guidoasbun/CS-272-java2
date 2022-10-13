@@ -1,7 +1,7 @@
 package Oct11Queues.LabActivityQueues;
 
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
@@ -15,7 +15,7 @@ public class ManufacturingOrders {
         manufacturingOrderQueue = new LinkedList<>();
     }
 
-    public ManufacturingOrders(String filename) throws FileNotFoundException {
+    public ManufacturingOrders(String filename) throws IOException {
         manufacturingOrderQueue = new LinkedList<>();
         Scanner fileInput = new Scanner(new File(filename));
         while (fileInput.hasNext()) {
@@ -38,7 +38,7 @@ public class ManufacturingOrders {
         if (manufacturingOrderQueue.peek() == null) {
             throw new IllegalArgumentException("Empty queue: no order was shipped");
         } else {
-            return manufacturingOrderQueue.poll();
+            return  manufacturingOrderQueue.poll() + " You oder has shipped";
         }
     }
 
