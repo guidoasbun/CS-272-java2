@@ -21,26 +21,22 @@ public class SemesterEnrollment {
     public SemesterEnrollment(String studentName, int studentNumber) {
         if (studentName.equals("")) {
             throw new IllegalArgumentException("Invalid Student Name: can not create an enrollment for a student with an empty name");
-        } else {
-            this.studentName = studentName;
-        }
-        if (studentNumber < 0) {
+        } else if (studentNumber < 0) {
             throw new IllegalArgumentException("Invalid Student Number: can not create an enrollment for a student that does not have a number that is positive");
         } else {
             this.studentNumber = studentNumber;
+            this.studentName = studentName;
         }
     }
 
-    public SemesterEnrollment(String filename) throws IOException
-    {
+    public SemesterEnrollment(String filename) throws IOException {
         Scanner fileInput = new Scanner(new File(filename));
 
         String studentName = fileInput.nextLine();
         int studentNumber = fileInput.nextInt();
         this.studentName = studentName;
         this.studentNumber = studentNumber;
-        while(fileInput.hasNext())
-        {
+        while (fileInput.hasNext()) {
             String course = fileInput.nextLine();
             courseSet.add(course);
         }
