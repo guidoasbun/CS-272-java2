@@ -1,14 +1,14 @@
 package Oct18Maps.LabActivityMaps;
 
+//Programmer: Guido Asbun
+
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-//Programmer: Guido Asbun
 public class ReportCard {
 
     // Variable Creation
@@ -26,9 +26,11 @@ public class ReportCard {
     }
 
     public ReportCard(String filename) throws IOException {
+
         Scanner fileInput = new Scanner(new File(filename));
         String studentName = fileInput.nextLine();
         int studentNumber = fileInput.nextInt();
+        fileInput.nextLine();
 
         this.studentName = studentName;
         this.studentNumber = studentNumber;
@@ -40,6 +42,7 @@ public class ReportCard {
             gradeMap.put(course, grade);
         }
         fileInput.close();
+
     }
 
     // Getters
@@ -85,5 +88,7 @@ public class ReportCard {
             fileOutput.println(key);
             fileOutput.println(value);
         });
+        fileOutput.close();
+
     }
 }
