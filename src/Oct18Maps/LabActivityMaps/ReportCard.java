@@ -16,7 +16,7 @@ public class ReportCard {
     private int studentNumber;
 
     // Object Creation
-    Map<String, String> gradeMap;
+    private Map<String, String> gradeMap;
 
     // Constructors
     public ReportCard(String studentName, int studentNumber) {
@@ -26,7 +26,6 @@ public class ReportCard {
     }
 
     public ReportCard(String filename) throws IOException {
-
         Scanner fileInput = new Scanner(new File(filename));
         String studentName = fileInput.nextLine();
         int studentNumber = fileInput.nextInt();
