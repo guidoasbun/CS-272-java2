@@ -37,9 +37,7 @@ public class Sort {
             for (int currentPosition = 0; currentPosition < array.length - 1; currentPosition++) {
                 minimumPosition = currentPosition;
                 for (int index = currentPosition + 1; index < array.length; index++) {
-                    String currentWordLowerCase = array[index].toLowerCase();
-                    String minimumWordLowerCase = array[minimumPosition].toLowerCase();
-                    if (currentWordLowerCase.compareTo(minimumWordLowerCase) < 0) {
+                    if (array[index].compareToIgnoreCase(array[minimumPosition]) < 0) {
                         minimumPosition = index;
                     }
                 }
