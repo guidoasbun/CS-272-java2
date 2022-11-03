@@ -60,6 +60,10 @@ public class DynamicArray<E> {
         return array[index];
     }
 
+    public int getNumberOfElements() {
+        return numberOfElements;
+    }
+
     public void set(int index, E element) {
         if (index < 0) {
             throw new IndexOutOfBoundsException("ArrayList index can not one a negative number");
