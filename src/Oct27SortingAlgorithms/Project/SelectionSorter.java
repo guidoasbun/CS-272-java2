@@ -1,5 +1,9 @@
 package Oct27SortingAlgorithms.Project;
 
+/**
+ Your task is to modify the selection sort algorithm so that you find the largest element and
+ swap it to the last position, then continue with the next-largest element and so on.
+ */
 public class SelectionSorter {
     /**
      Sorts the array managed by this selection sorter.
@@ -23,7 +27,15 @@ public class SelectionSorter {
     public static int maximumPosition(int[] array, int to)
     {
         // your work here
-        return 0;
+        int maxIndex = 0;
+        for (int i = 1; i <= to; i++)
+        {
+            if (array[i] > array[maxIndex])
+            {
+                maxIndex = i;
+            }
+        }
+        return maxIndex;
     }
 
     /**
