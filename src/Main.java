@@ -4,6 +4,6 @@ public class Main {
     public static void main(String[] args) {
         UUID something = UUID.randomUUID();
 
-        System.out.println(something);
+        System.out.println("Hello From Ubuntu AWS");
     }
 }
