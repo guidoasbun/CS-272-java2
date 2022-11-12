@@ -26,7 +26,7 @@ public class SinglyLinkedList<E> {
     }
 
     public void addLast(E element) {
-        SinglyLinkedListNode<E> newNode = new SinglyLinkedListNode(element, null);
+        SinglyLinkedListNode<E> newNode = new SinglyLinkedListNode<E>(element, null);
         if (tail == null) {
             head = newNode;
         } else {
