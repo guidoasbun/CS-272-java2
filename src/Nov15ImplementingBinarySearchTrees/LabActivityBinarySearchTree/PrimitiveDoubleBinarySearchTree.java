@@ -17,8 +17,8 @@ public class PrimitiveDoubleBinarySearchTree {
     }
 
     public PrimitiveDoubleBinarySearchTree(double[] array) {
-        for (int i = 1; i < array.length; i++) {
-            this.insert(array[i]);
+        for (int index = 1; index < array.length; index++) {
+            this.insert(array[index]);
         }
     }
 
@@ -74,5 +74,13 @@ public class PrimitiveDoubleBinarySearchTree {
             }
         }
         return parent;
+    }
+
+    public PrimitiveDoubleBinarySearchTreeNode searchMinimum() {
+        PrimitiveDoubleBinarySearchTreeNode current = root;
+        while (current.getLeftChild() != null) {
+            current = current.getLeftChild();
+        }
+        return current;
     }
 }

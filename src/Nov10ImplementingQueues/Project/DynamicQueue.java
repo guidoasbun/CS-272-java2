@@ -28,7 +28,7 @@ public class DynamicQueue<E> {
 
     public E poll() {
         if (queue.getNumberOfElements() == 0) {
-            return null;
+            throw new RuntimeException("Can not poll an empty queue");
         } else {
             return queue.remove(0);
         }
@@ -36,7 +36,7 @@ public class DynamicQueue<E> {
 
     public E peek() {
         if (queue.getNumberOfElements() == 0) {
-            return null;
+            throw new RuntimeException("Can not peek an empty queue");
         } else {
             return queue.get(0);
         }
