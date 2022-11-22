@@ -14,9 +14,13 @@ public class PrimitiveIntSeparateChainingHashSet {
     }
 
     public PrimitiveIntSeparateChainingHashSet(int numberOfBuckets) {
-        this.numberOfBuckets = numberOfBuckets;
-        this.size = 0;
-        this.bucket = new PrimitiveIntSeparateChainingHashSetNode[this.numberOfBuckets];
+        if (numberOfBuckets <= 0) {
+            throw new IllegalArgumentException("Number of buckets must be >= 1");
+        } else {
+            this.numberOfBuckets = numberOfBuckets;
+            this.size = 0;
+            this.bucket = new PrimitiveIntSeparateChainingHashSetNode[this.numberOfBuckets];
+        }
     }
 
     // Private Methods
